@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Chatbot</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Left Side: Customization Options -->
+    <div class="customization">
+            <!-- Button Icon -->
+      <label>Button Icon:</label>
+      <div class="icon-options">
+        <button onclick="updateButtonIcon('▶️')">▶️</button><br>
+        <button onclick="updateButtonIcon('➖')">➖</button><br>
+        <button onclick="updateButtonIcon('✔️')">✔️</button><br>
+        <button onclick="updateButtonIcon('🚀')">🚀</button><br>
+        <button onclick="updateButtonIcon('SEND')">SEND</button><br>
+        <button onclick="updateButtonIcon('➡️')">➡️</button>
+      </div><br><br>
+
+      <!-- Border Color -->
+      <label>Border Color:</label>
+      <input type="color" id="border-color" onchange="updateBorderColor()"><br><br>
+
+      <!-- Border Radius -->
+      <label>Border Radius:</label>
+      <input type="range" id="border-radius" min="0" max="50" value="10" onchange="updateBorderRadius()"><br><br>
+
+      <!-- Header Background Color -->
+      <label>Header Background Color:</label>
+      <input type="color" id="header-bg-color" onchange="updateHeaderColor()"><br><br>
+
+      <!-- Bot Text Color -->
+      <label>Bot Text Color:</label>
+      <input type="color" id="bot-text-color" onchange="updateBotTextColor()"><br><br>
+
+      <!-- Bot Chat Bubble Color -->
+      <label>Bot Chat Bubble Color:</label>
+      <input type="color" id="bot-bubble-color" onchange="updateBotBubbleColor()"><br><br>
+
+      <!-- User Text Color -->
+      <label>User Text Color:</label>
+      <input type="color" id="user-text-color" onchange="updateUserTextColor()"><br><br>
+
+      <!-- User Chat Bubble Color -->
+      <label>User Chat Bubble Color:</label>
+      <input type="color" id="user-bubble-color" onchange="updateUserBubbleColor()"><br><br>
+
+      <!-- Font Style -->
+      <label>Font Style:</label>
+      <div class="font-options">
+        <button onclick="updateFontStyle('Arial')">Arial</button>
+        <button onclick="updateFontStyle('Verdana')">Verdana</button>
+        <button onclick="updateFontStyle('Georgia')">Georgia</button>
+        <button onclick="updateFontStyle('Courier New')">Courier New</button>
+        <button onclick="updateFontStyle('Poppins')">Poppins</button>
+        <button onclick="updateFontStyle('Pacifico')">Pacifico</button>
+      </div>
+    </div>
+
+    <!-- Right Side: Chatbot -->
+    <div class="chatbot">
+      <div class="header">AI Assistant<br><span>Always here to help</span></div>
+      <div class="chat-window" id="chat-window">
+        <p>Hello! How can I assist you today?</p>
+        <div class="typing" id="typingIndicator">Typing..</div>
+        
+      </div>
+      <div class="chat-input">
+        <input type="text" id="user-input" placeholder="Type your message..." onkeydown="handleUserMessage(event)">
+
+         <button class="chat-button" onclick="sendMessage()">▶️</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
